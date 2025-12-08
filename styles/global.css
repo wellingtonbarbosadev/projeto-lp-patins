@@ -1,0 +1,57 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+:root {
+  /* MARCA */
+  --snitap-sun: #FFCD1E;
+  --snitap-sky-mid: #06B6D4;
+  --snitap-sky-light: #67E8F9;
+  --snitap-joy-mid: #DB2777;
+  --snitap-joy-light: #F472B6;
+  --snitap-leaf-mid: #16A34A;
+
+  /* BASE */
+  --text: #000;
+  --highlights: #000;
+  --backgroud: #FAFAFA;
+
+  --font-family-heading: 'Syne', sans-serif;
+  --font-family-body: 'Montserrat', sans-serif;
+
+  --heading1: 700/1.25 4rem var(--font-family-heading);
+  --heading2: 700/1.2 2.5rem var(--font-family-heading);
+
+  --button-label: 500/1.5 1rem var(--font-family-body);
+  --span: 500/1.5 .875rem var(--font-family-body);
+}
+
+html,
+button {
+  font: var(--button-label);
+  color: var(--text);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-family-heading);
+}
+
+h1 {
+  font: var(--heading1);
+}
+
+h2 {
+  font: var(--heading2);
+}
