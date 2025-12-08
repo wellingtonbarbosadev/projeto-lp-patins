@@ -1,0 +1,40 @@
+header {
+  display: flex;
+  align-items: center;
+  margin-inline: auto;
+  max-width: 1280px;
+  height: 4.5rem;
+  nav {
+    display: flex;
+    justify-content: space-between;
+    margin-inline: 2rem;
+    width: 100%;
+
+    a {
+
+      & > img {
+        width: 32px;
+        height: 32px;
+        display: block;
+      }
+      
+      &:has(.shop-bag) {
+        position: relative;
+        
+        &::before {
+          content: "1";
+          text-align: center;
+          font-family: 'Inter', sans-serif;
+          position: absolute;
+          display: block;
+          background-color: var(--snitap-sun);
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          top: -5px;
+          right: -10px;
+        }
+      }
+    }
+  }
+}
