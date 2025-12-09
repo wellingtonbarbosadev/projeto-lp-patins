@@ -1,18 +1,27 @@
 #hero {
   height: 568px;
+  max-width: 80rem;
   padding-block: 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  
 
   & div:first-child {
-    h1, span {
-      display: inline-block;
-      font: var(--heading1);
-    }
+
+    margin-block: auto;
+    
 
     h1 {
       max-width: 40rem;
     }
 
-    div {
+    h1 > div {
+
+      h1, span {
+        display: inline-block;
+        font: var(--heading1);
+      }
+
       display: inline-block;
       width: min-content;
       height: 5rem;
@@ -32,22 +41,147 @@
 
       span {
         display: block;
-        animation: slideUp 6s infinite;
+        animation: slideUp 6s 2s infinite;
         
       }
+    }
+    .buttons {
+      display: flex;
+      font: var(--button-label);
+      margin-top: 3rem;
+      gap: 2rem;
+
+      a, a > span {
+        display: flex;
+        align-items: center;
+        gap: .75rem;
+        transition: scale .4s, box-shadow .4s;
+      }
+      a:hover {
+        scale: 1.1;
+        &.buy {
+
+          box-shadow: 0px 20px 25px rgba(0, 0, 0, .2);
+        }
+        span {
+
+          box-shadow: 0px 20px 25px rgba(0, 0, 0, .2);
+        }
+
+      }
+      .buy {
+        padding: 1.5rem 3rem;
+        border-radius: 5rem;
+        background-color: var(--snitap-sun);
+        max-width: 17.75rem;
+        flex: 2;
+      }
+
+      .play {
+
+        span {
+          background-color: white;
+          padding: 1.5rem;
+          border-radius: 50%;
+        }
+
+      }
+    }
+    .shadow {
+      box-shadow: 
+      0px 3px 5px rgba(0, 0, 0, 0.1),
+      0px 6px 10px rgba(0, 0, 0, 0.09),
+      0px 12px 20px rgba(0, 0, 0, 0.08),
+      0px 24px 40px rgba(0, 0, 0, 0.05);
     }
   }
 
 
   div + div:last-child {
-    display: none;
+    display: flex;
+    align-items: center;
     position: relative;
+    width: 100%;
+    max-width: 488px;
+    overflow-x: hidden;
     
     img {
       position: absolute;
     }
+    img[src*='Ellipse'] {
+      animation: slideRtoLellipse 2s;
+      width: 462px;
+      height: 462px;
+      z-index: 0;
+    }
+    img[src*='patins'] {
+      animation: slideRtoLpatins 2s;
+      width: 488px;
+      height: 462px;
+      z-index: 10;
+    }
+
+    img[src*='Stars 1'] {
+      animation: slideRtostars1 2s;
+      top: 148px;
+    }
+
+    img[src*='Stars 2'] {
+      animation: slideRtoLstars2 2s;
+      top: 277px;
+      left: 435px;
+    }
+    
   }
 }
+
+@keyframes slideRtoLpatins {
+  0% {
+    transform: translateX(120%);
+  }
+  80% {
+    transform: translateX(-20px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes slideRtoLellipse {
+  0% {
+    transform: translateX(160%);
+  }
+  80% {
+    transform: translateX(-20px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideRtostars1 {
+  0% {
+    transform: translateX(1000%);
+  }
+  80% {
+    transform: translateX(-20px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideRtoLstars2 {
+  0% {
+    transform: translateX(1000%);
+  }
+  80% {
+    transform: translateX(-20px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
 @keyframes slideUp {
   0%, 22% {
     transform: translateY(0);
