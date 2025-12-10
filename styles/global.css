@@ -41,6 +41,11 @@ button {
   color: var(--text);
 }
 
+html {
+  overflow-x: hidden;
+  /* zoom: .4; */
+}
+
 h1,
 h2,
 h3,

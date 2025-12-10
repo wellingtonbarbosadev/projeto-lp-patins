@@ -1,4 +1,7 @@
 @import url('global.css');
 @import url('header.css');
 @import url('utility.css');
+@import url('footer.css');
 @import url('sections/hero.css');
+@import url('sections/banner.css');
+@import url('sections/photo-gallery.css');

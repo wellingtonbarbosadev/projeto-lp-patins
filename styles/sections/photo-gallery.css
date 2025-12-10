@@ -1,0 +1,116 @@
+#photo-gallery {
+  div.heading {
+    text-align: center;
+    p {
+      text-transform: uppercase;
+    }
+  }
+  
+  div.photos {
+    width: 100%;
+    margin-block: 2rem;
+
+    & > div:nth-child(1) {
+      margin-bottom: 2rem;
+    }
+
+    div:nth-child(1) {
+      grid-template-columns: 1.5fr 2fr;
+    }
+    div:nth-child(2) {
+      grid-template-columns: 2fr 1.5fr;
+    }
+    & > div {
+      display: grid;
+      gap: 2rem;
+      img {
+        width: 100%;
+        object-fit: cover;
+        height: 25rem;
+      }
+      }
+    }
+    & .container-img {
+      position: relative;
+      display: flex;
+      overflow: hidden;
+      border-radius: 2.5rem;
+
+      animation: fade ease backwards;
+      animation-timeline: view();
+      animation-range: 100px 300px;
+
+      &[data-delay] {
+        animation-range: 150px 350px;
+      }
+      
+      
+      img {
+        position: relative;
+        transition: all .3s ease-in-out;
+      }
+
+      span {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        color: white;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        justify-content: flex-end;
+        width: 100%;
+        padding: 1.81rem 2rem;
+        font: var(--span);
+        transform: translateY(100%);
+        transition: transform .5s;
+        background-image: linear-gradient(
+          180deg,
+          transparent,
+          rgba(0, 0, 0, 0.655)
+        );
+        
+        & > img.profile-pic {
+          all: unset;
+          width: 32px;
+          height: 32px;
+        }
+      }
+
+    
+      &:hover {
+        &::after {
+          content: "";
+          display: block;
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          
+        }
+        img {
+          scale: 1.1;
+        }
+        span {
+          display: flex;
+          transform: translateY(0);
+          z-index: 1;
+        }
+      }
+    }
+}
+
+@keyframes appear {
+  0% {
+    transform: translateY(+100px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+}
