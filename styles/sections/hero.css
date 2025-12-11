@@ -5,11 +5,9 @@
   display: flex;
   justify-content: space-between;
   
-
   & div:first-child {
 
     margin-block: auto;
-    
 
     h1 {
       max-width: 40rem;
@@ -18,15 +16,14 @@
     h1 > div {
 
       h1, span {
-        display: inline-block;
         font: var(--heading1);
       }
 
       display: inline-block;
       width: min-content;
-      height: 5rem;
+      height: var(--span-height);
       vertical-align: bottom;
-      overflow-y: hidden;
+      overflow: hidden;
       
       span:nth-child(1),
       span:nth-child(4) {
@@ -96,28 +93,35 @@
     }
   }
 
-
   div + div:last-child {
     display: flex;
     align-items: center;
-    position: relative;
     width: 100%;
     max-width: 488px;
-    overflow-x: hidden;
-    
+    div {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
     img {
       position: absolute;
+      object-fit: contain;
+      top: 0;
     }
     img[src*='Ellipse'] {
       animation: slideRtoLellipse 2s;
-      width: 462px;
-      height: 462px;
+      width: 100%;
+      max-width: 462px;
+      height: 100%;
+      max-height: 462px;
       z-index: 0;
     }
     img[src*='patins'] {
       animation: slideRtoLpatins 2s;
-      width: 488px;
-      height: 462px;
+      width: 100%;
+      max-width: 488px;
+      height: 100%;
+      max-height: 462px;
       z-index: 10;
     }
 
@@ -128,12 +132,54 @@
 
     img[src*='Stars 2'] {
       animation: slideRtoLstars2 2s;
-      top: 277px;
-      left: 435px;
+      top: 220px;
+      right: 0;
     }
     
   }
+
+  @media (max-width:960px) {
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    height: 100vh;
+    position: relative;
+    padding-top: unset;
+    padding-bottom: 1rem;
+
+    .container-hero {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    div:first-child {
+      h1 {
+          font-size: 2rem;
+        }
+      
+      h1 > div {
+        span {
+          font-size: 2rem;
+        }
+        height: var(--span-height);
+        overflow: hidden;
+      }
+
+      .buttons {
+        flex-direction: column-reverse;
+        align-items: center;
+      }
+
+    }
+  }
 }
+
+
+
+
+
 
 @keyframes slideRtoLpatins {
   0% {
@@ -188,62 +234,62 @@
   }
 
   23% {
-    transform: translateY(calc(-5rem - 15px));
+     transform: translateY(calc(-1 * var(--span-height) - 15px));
   }
 
   25% {
-    transform: translateY(calc(-5rem + 10px));
+     transform: translateY(calc(-1 * var(--span-height) + 10px));
   }
 
   27% {
-    transform: translateY(calc(-5rem - 5px));
+     transform: translateY(calc(-1 * var(--span-height) - 5px));
   }
 
   29% {
-    transform: translateY(calc(-5rem + 5px));
+     transform: translateY(calc(-1 * var(--span-height) + 5px));
   }
 
   33%, 55% {
-    transform: translateY(calc(-5rem));
+     transform: translateY(calc(-1 * var(--span-height)));
   }
 
   56% {
-    transform: translateY(calc(-10rem - 15px));
+     transform: translateY(calc(-1 * var(--span-height) * 2 - 15px));
   }
 
   58% {
-    transform: translateY(calc(-10rem + 10px));
+     transform: translateY(calc(-1 * var(--span-height) * 2 + 10px));
   }
 
   60% {
-    transform: translateY(calc(-10rem - 5px));
+     transform: translateY(calc(-1 * var(--span-height) * 2 - 5px));
   }
   
   62% {
-    transform: translateY(calc(-10rem + 5px));
+     transform: translateY(calc(-1 * var(--span-height) * 2 + 5px));
   }
 
   66%, 88% {
-    transform: translateY(calc(-10rem));
+     transform: translateY(calc(-1 * var(--span-height) * 2));
   }
 
   89% {
-    transform: translateY(calc(-15rem - 15px));
+     transform: translateY(calc(-1 * var(--span-height) * 3 - 15px));
   }
 
   91% {
-    transform: translateY(calc(-15rem + 10px));
+     transform: translateY(calc(-1 * var(--span-height) * 3 + 10px));
   }
 
   93% {
-    transform: translateY(calc(-15rem - 5px));
+     transform: translateY(calc(-1 * var(--span-height) * 3 - 5px));
   }
   
   95% {
-    transform: translateY(calc(-15rem + 5px));
+     transform: translateY(calc(-1 * var(--span-height) * 3 + 5px));
   }
 
   100% {
-    transform: translateY(-15rem);
+    transform: translateY(calc(-(var(--span-height) * 3)));
   }
 }

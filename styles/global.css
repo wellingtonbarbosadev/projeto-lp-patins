@@ -12,6 +12,8 @@ a {
 }
 
 :root {
+  --span-height: 5rem;
+
   /* MARCA */
   --snitap-sun: #FFCD1E;
   --snitap-sky-mid: #06B6D4;
@@ -33,6 +35,12 @@ a {
 
   --button-label: 500 1rem/1.5 var(--font-family-body);
   --span: 500 .875rem/1.5 var(--font-family-body);
+}
+
+@media (max-width: 960px) {
+  :root {
+    --span-height: 2.5rem;
+  }
 }
 
 html,

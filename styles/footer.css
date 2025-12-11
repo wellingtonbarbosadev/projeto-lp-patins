@@ -79,4 +79,18 @@ footer {
       }
     }
   }
+
+  @media (max-width: 800px) {
+    flex-direction: column;
+    align-items: self-start;
+    gap: 3rem;
+
+    div:nth-child(2) {
+      flex-direction: column;
+      a {
+
+        align-self: self-start;
+      }
+    }
+  }
 }
